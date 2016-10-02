@@ -6,6 +6,6 @@ deployment:
   github_release:
     branch: master
     commands:
-      - gem install octokit
+      - gem install octokit mime-types
       - zip test.zip test.txt
       - ruby release.rb
