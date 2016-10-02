@@ -1,3 +1,6 @@
 test:
   override:
-    - echo 123
+    - echo "This is dummy test"
+  post:
+    - zip test.zip test.txt
+    - mv test.zip $CIRCLE_ARTIFACTS/
