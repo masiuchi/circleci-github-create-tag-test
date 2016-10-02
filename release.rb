@@ -22,3 +22,5 @@ end
 client = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
 release = client.create_release(repo, tag_name)
 client.upload_asset(release.url, './test.zip')
+
+puts "Released #{tag_name}"
