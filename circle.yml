@@ -9,6 +9,10 @@ dependencies:
 test:
   override:
     - echo "This is dummy test"
-  post:
-    - zip test.zip test.txt
-    - mv test.zip $CIRCLE_ARTIFACTS/
+
+deployment:
+  github_release:
+    branch: master
+    commands:
+      - zip test.zip test.txt
+      - ruby release.rb
